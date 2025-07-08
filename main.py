@@ -37,7 +37,7 @@ def run_rag_pipeline(query: str, document: str):
 
     
     chunks = chunk_text(document)
-    print("\n✂️ Chunks:")
+    print("\n Chunks:")
     for i, chunk in enumerate(chunks):
         print(f"  {i+1}. {chunk}")
 
@@ -51,7 +51,7 @@ def run_rag_pipeline(query: str, document: str):
     print("\n Chunks:")
     if matched_chunks:
         for chunk in matched_chunks:
-            print(f"  ✓ {chunk}")
+            print(f"  {chunk}")
     else:
         print(" No relevant chunks found.")
 
