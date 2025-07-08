@@ -32,7 +32,7 @@ def generate_answer(query: str, context: list) -> str:
 
 # Run the pipeline 
 def run_rag_pipeline(query: str, document: str):
-    print("\n📄 Document:")
+    print("\n Document:")
     print(document)
 
     
@@ -44,19 +44,19 @@ def run_rag_pipeline(query: str, document: str):
     
     if chunks:
         vec = embed_chunk(chunks[0])
-        print(f"\n📌 Sample embedding (first 5 floats): {vec[:5]}")
+        print(f"\n Dummy embedding(initial floats): {vec[:5]}")
 
     
     matched_chunks = retrieve(query, chunks)
-    print("\n🔍 Retrieved Chunks:")
+    print("\n Chunks:")
     if matched_chunks:
         for chunk in matched_chunks:
             print(f"  ✓ {chunk}")
     else:
-        print("  No relevant chunks found.")
+        print(" No relevant chunks found.")
 
     answer = generate_answer(query, matched_chunks)
-    print("\n💬 Answer:")
+    print("\n Answer:")
     print(f"  {answer}")
 
 
